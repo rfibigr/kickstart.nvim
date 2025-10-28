@@ -129,18 +129,19 @@ require('lazy').setup {
   require 'custom.plugins.lsp',
   require 'custom.plugins.format_and_completion',
   require 'custom.plugins.treesitter',
-  -- require 'custom.plugins.mini',
-  {
-    'folke/lazydev.nvim',
-    ft = 'lua', -- only load on lua files
-    opts = {
-      library = {
-        -- See the configuration section for more details
-        -- Load luvit types when the `vim.uv` word is found
-        { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+  require 'custom.plugins.copilot',
+    -- require 'custom.plugins.mini',
+    {
+      'folke/lazydev.nvim',
+      ft = 'lua', -- only load on lua files
+      opts = {
+        library = {
+          -- See the configuration section for more details
+          -- Load luvit types when the `vim.uv` word is found
+          { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+        },
       },
     },
-  },
 
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
